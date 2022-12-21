@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%,
+}
+body {
+    font-size: 1.6rem;
+    height: 100vh;
+}
+@font-face {
+    font-family: Gloria;
+    src: url("../fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf");
+}
+
+@font-face {
+    font-family: Mukta;
+    src: url("../fonts/Mukta/Mukta-Light.ttf");
+}
+
+header {
+    height: 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    font-size: 1.7rem;
+    padding-left: 2rem;
+    font-family: Gloria;
+    color: midnightblue;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 28rem;
+}
+
+ul a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: Mukta;
+    color: black;
+    letter-spacing: -.05rem;
+}
+
+.contact_button a {
+    background-color: rgba(62, 62, 111, 0.885);
+    border-radius: 2.5rem;
+    color: rgb(255, 228, 196);
+    padding: .1rem 1.5rem;
+}
