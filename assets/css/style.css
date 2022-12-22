@@ -1,57 +1,230 @@
-* {
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: Gloria;
+  src: url("../fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf");
 }
+@font-face {
+  font-family: Mukta;
+  src: url("../fonts/Mukta/Mukta-Light.ttf");
+}
+@font-face {
+  font-family: Inter;
+  src: url("../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
 html {
-    font-size: 62.5%,
+  font-size: 62.5%;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-size: 1.6rem;
-    height: 100vh;
-}
-@font-face {
-    font-family: Gloria;
-    src: url("../fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf");
-}
-
-@font-face {
-    font-family: Mukta;
-    src: url("../fonts/Mukta/Mukta-Light.ttf");
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #222;
+  max-width: 200rem;
+  margin: auto;
 }
 
-header {
-    height: 9%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* --- Fonts --- */
+.font_mukta {
+  font-family: Mukta;
 }
 
-h2 {
-    font-size: 1.7rem;
-    padding-left: 2rem;
-    font-family: Gloria;
-    color: midnightblue;
+.font_inter {
+  font-family: Inter;
 }
 
-ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    width: 28rem;
+/* --- Navbar --- */
+.navbar {
+  padding: 2rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-ul a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: Mukta;
-    color: black;
-    letter-spacing: -.05rem;
+.navbar .logo {
+  font-family: Gloria;
+  color: midnightblue;
+  font-size: 2.5rem;
+  padding-left: 2rem;
 }
 
-.contact_button a {
-    background-color: rgba(62, 62, 111, 0.885);
-    border-radius: 2.5rem;
-    color: rgb(255, 228, 196);
+.navbar ul {
+  width: 50%;
+  font-size: 1.8rem;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar ul li a:hover {
+  color: #2167cf;
+}
+
+#kontakt_btn {
+    background-color: rgba(132, 132, 180, 0.885);
+    color: #fff;
     padding: .1rem 1.5rem;
 }
+
+#kontakt_btn:hover {
+    color: #2167cf;
+    font-weight: bold;
+  }
+
+
+/* --- Hero --- */
+
+/* to memorise !! 'HERO' for the section of the landing page you first encounter before u start scrolling down. */
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.hero-flex-group {
+  font-size: 2rem; 
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+}
+
+.hero-flex-group h1 {
+  text-transform: uppercase;
+  font-size: 7.5rem;
+  color: rgb(48, 46, 46);
+  /* to memorise !! line-height (1 = default) zum abstand zwischen den Zeilen stylen,
+  geht auch in '%' & 'px' */
+  line-height: 1;
+  padding: 0.5rem 0;
+}
+
+.hero .welcome-text-group {
+  width: 20rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #dd2e99;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text-group .intro-welcome {
+  padding-left: 1rem;
+}
+
+.h1-descr {
+  text-transform: uppercase;
+  padding-top: .7rem;
+  font-size: 2rem;
+}
+
+.hero-btn {
+  margin-top: 3rem;
+  font-size: 2rem;
+  width: 90%;
+  max-width: 20rem;
+  padding: .5rem 2rem;
+  border: none;
+  color: #fff;
+  background-color: #dd2e99;
+}
+
+.hero-btn:hover {
+  background-color: #f565be;
+}
+
+.hero-btn:active {
+  background-color: #dd2e99;
+}
+
+.hero-image {
+  width: 35%;
+}
+
+.hero-image img {
+  position: relative;
+  /* max-width/min-width - um container 'stabil' zu halten, wenn switch zwischen narrow & wide screen */
+  max-width: 50rem;
+  border-radius: 100vw;
+  box-shadow: 1.5rem .5rem .4rem rgba(95, 95, 135, 0.885);
+}
+
+/* --- Arrow --- */
+
+.arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* .arrow container 50% of the .welcome-text-group flexcontainer,
+  um die Länge zu bestimmen */
+  width: 50%;
+  /* height: 2rem;
+  ändert nix am layout, ohne ist der span aber nicht sichtbar im untersuchen-mode */
+}
+
+.arrow .arrow-line {
+  width: 100%;
+  /* container height to 1px, bck dazu = arrow line */
+  height: .1rem;
+  background-color: #dd2e99;
+}
+
+.arrow .arrow-head {
+  /* absolute - bezieht sich auf den nachbar davor (wie genau?), wenn kein relative da - auf 'body' */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  /* !! try it out more in depth !!
+  https://www.mediaevent.de/css/transform.html */
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #dd2e99;
+}
+
+/* --- About ---  */
+
+.about {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border: 2px solid #2167cf;
+  border-left: none;
+  padding: 5rem 0;
+  margin-top: 15rem;
+}
+
+.about-heading {
+  width: 20rem;
+  font-size: 5.5rem;
+  color: rgb(48, 46, 46);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.about-text {
+  width: 60%;
+  line-height: 1.5;
+  font-size: 1.7rem;
+}
+
+.fa-github {
+  padding-top: 1rem;
+  font-size: 3rem;
+  color: #888;
+}
+
+
